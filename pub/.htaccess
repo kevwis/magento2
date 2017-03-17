@@ -129,8 +129,7 @@
 
 ############################################
 ## Enable rewrites
-
-    Options +FollowSymLinks
+    Options +FollowSymLinks -MultiViews
     RewriteEngine on
 
 ############################################
@@ -213,5 +212,6 @@ ErrorDocument 403 /errors/404.php
 <IfModule mod_headers.c>
     ############################################
     ## Prevent clickjacking
-    Header set X-Frame-Options SAMEORIGIN
+    #Header set X-Frame-Options SAMEORIGIN
+    Header set Access-Control-Allow-Origin "*"
 </IfModule>
